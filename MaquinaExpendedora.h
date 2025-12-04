@@ -16,6 +16,7 @@ public:
     void insertarDinero(double cantidad);
     void seleccionarProducto(Producto* p);
     void finalizarCompra(Producto* p);
+    double consultarSaldo() const;
 };
 
 #endif

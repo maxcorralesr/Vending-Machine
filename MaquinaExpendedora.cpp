@@ -29,3 +29,6 @@ void MaquinaExpendedora::finalizarCompra(Producto* p) {
         cout << "Compra exitosa. Su cambio es: $" << cambio << "\n";
     }
 }
+double MaquinaExpendedora::consultarSaldo() const {
+    return monedero.getSaldoActual();
+}
