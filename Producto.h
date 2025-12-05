@@ -13,7 +13,9 @@ private:
     double precio;
 
 public:
-    Producto(string, double);
+    Producto();
+    Producto(string n, double p);
+
     string getNombre() const;
     double getPrecio() const;
 };
