@@ -3,7 +3,8 @@
 //
 
 #include "Producto.h"
-using namespace std;
+
+Producto::Producto() : nombre(""), precio(0.0) {}
 
 Producto::Producto(string n, double p) {
     nombre = n;
