@@ -12,12 +12,12 @@ using namespace std;
 
 class Dispensador {
 private:
-    map<Producto*, int> inventario;
+    map<string, int> inventario;
 
 public:
-    bool verificarStock(Producto* p);
-    bool dispensarProducto(Producto* p);
-    void agregarProducto(Producto* p, int c);
+    bool verificarStock(const Producto& p);
+    bool dispensarProducto(const Producto& p);
+    void agregarProducto(const Producto& p, int c);
 };
 
 #endif //UNTITLED7_DISPENSADOR_H
