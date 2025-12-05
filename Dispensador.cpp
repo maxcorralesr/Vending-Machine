@@ -3,27 +3,26 @@
 //
 
 #include "Dispensador.h"
-using namespace std;
 
-bool Dispensador::verificarStock(Producto* p) {
-    if (inventario.find(p) != inventario.end()) {
-        return inventario[p] > 0;
+bool Dispensador::verificarStock(const Producto& p) {
+    string nombre = p.getNombre();
+    // count() devuelve 1 si la clave existe 0 si no entonces validamos si es mayor a 0 si no pues da false y si si da true.
+    if (inventario.count(nombre)) {
+        return inventario[nombre] > 0;
     }
     return false;
 }
 
-bool Dispensador::dispensarProducto(Producto* p) {
+bool Dispensador::dispensarProducto(const Producto& p) {
     if (verificarStock(p)) {
-        inventario[p]--;
+        string nombre = p.getNombre();
+        inventario[nombre]--;
         return true;
     }
     return false;
 }
 
-void Dispensador::agregarProducto(Producto* p, int c) {
-    if (inventario.find(p) != inventario.end()) {
-        inventario[p] += c;
-    } else {
-        inventario[p] = c;
-    }
+void Dispensador::agregarProducto(const Producto& p, int c) {
+    string nombre = p.getNombre();
+    inventario[nombre] += c;
 }
