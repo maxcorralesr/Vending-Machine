@@ -7,16 +7,16 @@
 
 class MaquinaExpendedora {
 private:
-    Dispensador* dispensador;
-    Monedero monedero;
+    Dispensador& dispensador; 
+    Monedero monedero;       
 
 public:
-    MaquinaExpendedora(Dispensador* d);
+    MaquinaExpendedora(Dispensador& d);
 
     void insertarDinero(double cantidad);
-    void seleccionarProducto(Producto* p);
-    void finalizarCompra(Producto* p);
+    void seleccionarProducto(const Producto& p);
+    void finalizarCompra(const Producto& p);
     double consultarSaldo() const;
+    void mostrarGanancias() const;
 };
-
 #endif
