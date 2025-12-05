@@ -7,14 +7,15 @@ Monedero::Monedero() : saldoActual(0.0), dineroTotal(0.0) {}
 void Monedero::ingresarDinero(double cantidad) {
     if (cantidad > 0) {
         saldoActual += cantidad;
-        cout << "Ingresados: $" << cantidad << ". Saldo actual: $" << saldoActual << "\n";
+        cout << "Ingresados: $" << cantidad
+             << ". Saldo actual: $" << saldoActual << "\n";
     }
 }
 
 double Monedero::calcularCambio(double costo) {
     double cambio = saldoActual - costo;
-    dineroTotal += costo;
-    saldoActual = 0;
+    dineroTotal += costo; // Acumulamos la ganancia
+    saldoActual = 0;      // Reiniciamos el saldo del cliente
     return cambio;
 }
 
@@ -24,4 +25,8 @@ bool Monedero::validarDineroSuficiente(double costo, double ingresado) {
 
 double Monedero::getSaldoActual() const {
     return saldoActual;
+}
+
+double Monedero::getDineroTotal() const {
+    return dineroTotal;
 }
