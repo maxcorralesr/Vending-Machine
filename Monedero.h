@@ -3,8 +3,8 @@
 
 class Monedero {
 private:
-    double saldoActual;
-    double dineroTotal;
+    double saldoActual; // Dinero del cliente
+    double dineroTotal; // Ganancias de la máquina
 
 public:
     Monedero();
@@ -12,6 +12,7 @@ public:
     double calcularCambio(double costo);
     bool validarDineroSuficiente(double costo, double ingresado);
     double getSaldoActual() const;
+    double getDineroTotal() const; // Agregué este getter para poder ver las ganancias
 };
 
 #endif
